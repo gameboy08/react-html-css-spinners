@@ -1,0 +1,16 @@
+{
+  "name": "ssr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-html-css-spinners": "file:../.."
+  }
+}

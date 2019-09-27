@@ -2,11 +2,20 @@
   "name": "react-html-css-spinners",
   "version": "1.0.0",
   "description": "CSS-only spinners for React",
-  "main": "index.js",
+  "main": "./dist/bundle.cjs.js",
+  "module": "./dist/bundle.esm.js",
+  "sideEffects": false,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint '**/*.js'",
-    "lint:fix": "prettier-eslint '**/*.js' --write"
+    "lint:fix": "prettier-eslint '**/*.js' --write",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook",
+    "test": "jest",
+    "test: watch": "jest --watch",
+    "test: coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
@@ -21,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gameboy08/react-html-css-spinners.git"
+    "url": "https://github.com/gameboy08/react-html-css-spinners.git"
   },
   "keywords": [
     "react",
@@ -36,16 +45,45 @@
   },
   "homepage": "https://github.com/gameboy08/react-html-css-spinners#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/react": "^5.2.1",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
     "eslint": "^6.4.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.0.5",
+    "jest": "^24.9.0",
     "lint-staged": "^9.3.0",
     "prettier-eslint": "^9.0.0",
-    "prettier-eslint-cli": "^5.0.0"
+    "prettier-eslint-cli": "^5.0.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-terser": "^5.1.2"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": ">=16.2"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.css$": "<rootDir>/mocks/styleMock.js"
+    }
   }
 }
