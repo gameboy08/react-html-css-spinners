@@ -16,7 +16,9 @@
     "test:staged": "jest --findRelatedTests",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "predeploy": "npm run storybook:build",
+    "deploy": "gh-pages -d storybook-static"
   },
   "husky": {
     "hooks": {
@@ -45,7 +47,7 @@
   "bugs": {
     "url": "https://github.com/gameboy08/react-html-css-spinners/issues"
   },
-  "homepage": "https://github.com/gameboy08/react-html-css-spinners#readme",
+  "homepage": "https://gameboy08.github.io/react-html-css-spinners/",
   "devDependencies": {
     "@babel/core": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
@@ -62,6 +64,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.1.1",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "lint-staged": "^9.3.0",
